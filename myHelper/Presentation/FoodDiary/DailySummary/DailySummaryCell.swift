@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DailySummaryView: View {
+struct DailySummaryCell: View {
     var body: some View {
         ZStack {
             VStack {
@@ -49,13 +49,13 @@ struct DailySummaryView: View {
             }
         }
         .frame(height: 150)
-        .background(Color.teal)
+        .background(Color(uiColor: .systemTeal))
         .cornerRadius(12)
         .shadow(radius: 5)
         .padding(.horizontal, 16)
     }
 }
 
-#Preview {
-    DailySummaryView()
-}
+//#Preview {
+//    DailySummaryView()
+//}

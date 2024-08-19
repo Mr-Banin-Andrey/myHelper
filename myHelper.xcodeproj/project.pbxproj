@@ -15,7 +15,9 @@
 		9DACB7472C7261FC003716A9 /* FoodDiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB7462C7261FC003716A9 /* FoodDiaryViewModel.swift */; };
 		9DACB7492C726D3D003716A9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB7482C726D3D003716A9 /* SettingsView.swift */; };
 		9DACB74B2C726D49003716A9 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB74A2C726D49003716A9 /* SettingsViewModel.swift */; };
-		9DACB74E2C727077003716A9 /* DailySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB74D2C727077003716A9 /* DailySummaryView.swift */; };
+		9DACB74E2C727077003716A9 /* DailySummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB74D2C727077003716A9 /* DailySummaryCell.swift */; };
+		9DACB7512C73D042003716A9 /* DailySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB7502C73D042003716A9 /* DailySummaryView.swift */; };
+		9DACB7532C73D053003716A9 /* DailySummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB7522C73D053003716A9 /* DailySummaryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +30,9 @@
 		9DACB7462C7261FC003716A9 /* FoodDiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDiaryViewModel.swift; sourceTree = "<group>"; };
 		9DACB7482C726D3D003716A9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9DACB74A2C726D49003716A9 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		9DACB74D2C727077003716A9 /* DailySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySummaryView.swift; sourceTree = "<group>"; };
+		9DACB74D2C727077003716A9 /* DailySummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySummaryCell.swift; sourceTree = "<group>"; };
+		9DACB7502C73D042003716A9 /* DailySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySummaryView.swift; sourceTree = "<group>"; };
+		9DACB7522C73D053003716A9 /* DailySummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySummaryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 		9DACB7432C726011003716A9 /* FoodDiary */ = {
 			isa = PBXGroup;
 			children = (
+				9DACB74F2C73CF57003716A9 /* DailySummary */,
 				9DACB74C2C72703C003716A9 /* SubViews */,
 				9DACB7442C7261EF003716A9 /* FoodDiaryView.swift */,
 				9DACB7462C7261FC003716A9 /* FoodDiaryViewModel.swift */,
@@ -141,9 +146,18 @@
 		9DACB74C2C72703C003716A9 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				9DACB74D2C727077003716A9 /* DailySummaryView.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		9DACB74F2C73CF57003716A9 /* DailySummary */ = {
+			isa = PBXGroup;
+			children = (
+				9DACB74D2C727077003716A9 /* DailySummaryCell.swift */,
+				9DACB7502C73D042003716A9 /* DailySummaryView.swift */,
+				9DACB7522C73D053003716A9 /* DailySummaryViewModel.swift */,
+			);
+			path = DailySummary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,9 +232,11 @@
 			files = (
 				9DACB7492C726D3D003716A9 /* SettingsView.swift in Sources */,
 				9DACB7472C7261FC003716A9 /* FoodDiaryViewModel.swift in Sources */,
+				9DACB7532C73D053003716A9 /* DailySummaryViewModel.swift in Sources */,
 				9DACB7322C725AE9003716A9 /* ContentView.swift in Sources */,
-				9DACB74E2C727077003716A9 /* DailySummaryView.swift in Sources */,
+				9DACB74E2C727077003716A9 /* DailySummaryCell.swift in Sources */,
 				9DACB7452C7261EF003716A9 /* FoodDiaryView.swift in Sources */,
+				9DACB7512C73D042003716A9 /* DailySummaryView.swift in Sources */,
 				9DACB7302C725AE9003716A9 /* myHelperApp.swift in Sources */,
 				9DACB74B2C726D49003716A9 /* SettingsViewModel.swift in Sources */,
 			);
@@ -359,6 +375,7 @@
 				DEVELOPMENT_TEAM = HTF5ZZPGPW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -393,6 +410,7 @@
 				DEVELOPMENT_TEAM = HTF5ZZPGPW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

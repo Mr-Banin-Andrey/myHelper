@@ -11,26 +11,23 @@ struct FoodDiaryView: View {
     @StateObject var viewModel: FoodDiaryViewModel
     
     var body: some View {
-        ZStack {
-            ScrollView(.vertical) {
-//                LazyVStack {
-//                    
-//                }
-                DailySummaryView()
-                    .padding(.vertical, 4)
-                DailySummaryView()
-                    .padding(.vertical, 4)
-                DailySummaryView()
-                    .padding(.vertical, 4)
-                DailySummaryView()
-                    .padding(.vertical, 4)
-                DailySummaryView()
-                    .padding(.vertical, 4)
-                DailySummaryView()
-                    .padding(.vertical, 4)
+        NavigationStack {
+            ZStack {
+                ScrollView(.vertical) {
+    //                LazyVStack {
+    //
+    //                }
+                }
             }
+            .navigationTitle("Дневник питания")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(trailing:
+                                    NavigationLink(destination:
+                                                    DailySummaryView(viewModel: DailySummaryViewModel())) {
+                Image(systemName: "calendar")
+                    .foregroundColor(Color.init(uiColor: .systemPink))
+            })
         }
-        
     }
 }
 
