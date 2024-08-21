@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D56E9A52C765120001D16D0 /* MealTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56E9A42C765120001D16D0 /* MealTimeCell.swift */; };
 		9DACB7302C725AE9003716A9 /* myHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB72F2C725AE9003716A9 /* myHelperApp.swift */; };
 		9DACB7322C725AE9003716A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB7312C725AE9003716A9 /* ContentView.swift */; };
 		9DACB7342C725AEA003716A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DACB7332C725AEA003716A9 /* Assets.xcassets */; };
@@ -18,9 +19,11 @@
 		9DACB74E2C727077003716A9 /* DailySummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB74D2C727077003716A9 /* DailySummaryCell.swift */; };
 		9DACB7512C73D042003716A9 /* DailySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB7502C73D042003716A9 /* DailySummaryView.swift */; };
 		9DACB7532C73D053003716A9 /* DailySummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB7522C73D053003716A9 /* DailySummaryViewModel.swift */; };
+		9DACB7552C763493003716A9 /* FoodEaten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB7542C763493003716A9 /* FoodEaten.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D56E9A42C765120001D16D0 /* MealTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTimeCell.swift; sourceTree = "<group>"; };
 		9DACB72C2C725AE9003716A9 /* myHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DACB72F2C725AE9003716A9 /* myHelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myHelperApp.swift; sourceTree = "<group>"; };
 		9DACB7312C725AE9003716A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +36,7 @@
 		9DACB74D2C727077003716A9 /* DailySummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySummaryCell.swift; sourceTree = "<group>"; };
 		9DACB7502C73D042003716A9 /* DailySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySummaryView.swift; sourceTree = "<group>"; };
 		9DACB7522C73D053003716A9 /* DailySummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySummaryViewModel.swift; sourceTree = "<group>"; };
+		9DACB7542C763493003716A9 /* FoodEaten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FoodEaten.swift; path = myHelper/Domain/Entities/FoodEaten.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 				9DACB73E2C725C1E003716A9 /* Application */,
 				9DACB73F2C725C3C003716A9 /* Presentation */,
 				9DACB7402C725C95003716A9 /* Data */,
+				9DACB7562C7636D2003716A9 /* Domain */,
 				9DACB73D2C725BDA003716A9 /* Resources */,
 			);
 			path = myHelper;
@@ -146,6 +151,7 @@
 		9DACB74C2C72703C003716A9 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				9D56E9A42C765120001D16D0 /* MealTimeCell.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -158,6 +164,22 @@
 				9DACB7522C73D053003716A9 /* DailySummaryViewModel.swift */,
 			);
 			path = DailySummary;
+			sourceTree = "<group>";
+		};
+		9DACB7562C7636D2003716A9 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9DACB7572C7636E7003716A9 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		9DACB7572C7636E7003716A9 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				9DACB7542C763493003716A9 /* FoodEaten.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,10 +253,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DACB7492C726D3D003716A9 /* SettingsView.swift in Sources */,
+				9D56E9A52C765120001D16D0 /* MealTimeCell.swift in Sources */,
 				9DACB7472C7261FC003716A9 /* FoodDiaryViewModel.swift in Sources */,
 				9DACB7532C73D053003716A9 /* DailySummaryViewModel.swift in Sources */,
 				9DACB7322C725AE9003716A9 /* ContentView.swift in Sources */,
 				9DACB74E2C727077003716A9 /* DailySummaryCell.swift in Sources */,
+				9DACB7552C763493003716A9 /* FoodEaten.swift in Sources */,
 				9DACB7452C7261EF003716A9 /* FoodDiaryView.swift in Sources */,
 				9DACB7512C73D042003716A9 /* DailySummaryView.swift in Sources */,
 				9DACB7302C725AE9003716A9 /* myHelperApp.swift in Sources */,
@@ -379,8 +403,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -414,8 +440,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
