@@ -9,7 +9,9 @@ import Foundation
 
 struct FoodEatenDuringDay: Identifiable {
     let id: String
-    
+    let mealTimes: String
+    let time: Date
+    let dishes: [Dish]
 }
 
 struct Dish: Identifiable {

@@ -19,7 +19,7 @@
 		9DACB74E2C727077003716A9 /* DailySummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB74D2C727077003716A9 /* DailySummaryCell.swift */; };
 		9DACB7512C73D042003716A9 /* DailySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB7502C73D042003716A9 /* DailySummaryView.swift */; };
 		9DACB7532C73D053003716A9 /* DailySummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB7522C73D053003716A9 /* DailySummaryViewModel.swift */; };
-		9DACB7552C763493003716A9 /* FoodEaten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB7542C763493003716A9 /* FoodEaten.swift */; };
+		9DACB7552C763493003716A9 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB7542C763493003716A9 /* Dish.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +36,7 @@
 		9DACB74D2C727077003716A9 /* DailySummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySummaryCell.swift; sourceTree = "<group>"; };
 		9DACB7502C73D042003716A9 /* DailySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySummaryView.swift; sourceTree = "<group>"; };
 		9DACB7522C73D053003716A9 /* DailySummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySummaryViewModel.swift; sourceTree = "<group>"; };
-		9DACB7542C763493003716A9 /* FoodEaten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FoodEaten.swift; path = myHelper/Domain/Entities/FoodEaten.swift; sourceTree = SOURCE_ROOT; };
+		9DACB7542C763493003716A9 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Dish.swift; path = myHelper/Domain/Entities/Dish.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +177,7 @@
 		9DACB7572C7636E7003716A9 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				9DACB7542C763493003716A9 /* FoodEaten.swift */,
+				9DACB7542C763493003716A9 /* Dish.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -258,7 +258,7 @@
 				9DACB7532C73D053003716A9 /* DailySummaryViewModel.swift in Sources */,
 				9DACB7322C725AE9003716A9 /* ContentView.swift in Sources */,
 				9DACB74E2C727077003716A9 /* DailySummaryCell.swift in Sources */,
-				9DACB7552C763493003716A9 /* FoodEaten.swift in Sources */,
+				9DACB7552C763493003716A9 /* Dish.swift in Sources */,
 				9DACB7452C7261EF003716A9 /* FoodDiaryView.swift in Sources */,
 				9DACB7512C73D042003716A9 /* DailySummaryView.swift in Sources */,
 				9DACB7302C725AE9003716A9 /* myHelperApp.swift in Sources */,

@@ -10,29 +10,29 @@ import SwiftUI
 struct MealTimeCell: View {
     
     let partOfDay: String
-    let array: [FoodEaten]
+    let foodArray: [Dish]
     
     var body: some View {
         VStack {
-            HStack {
-                ZStack {
-                    Text(partOfDay)
-                        .padding(8)
-                        .padding(.bottom, 20)
-                }
-                .background(Color(uiColor: UIColor.systemBlue))
-                .cornerRadius(15)
-                .shadow(radius: 1)
-                .padding(.bottom, -20)
-                
-                Spacer()
-            }
-            .padding(.horizontal, 30)
+//            HStack {
+//                ZStack {
+//                    Text(partOfDay)
+//                        .padding(8)
+//                        .padding(.bottom, 20)
+//                }
+//                .background(Color(uiColor: UIColor.systemBlue))
+//                .cornerRadius(15)
+//                .shadow(radius: 1)
+//                .padding(.bottom, -20)
+//                
+//                Spacer()
+//            }
+//            .padding(.horizontal, 30)
             
             ZStack {
                 VStack {
                     HStack {
-                        Text("Блюда:")
+                        Text(partOfDay)
                         
                         Spacer()
                         
@@ -82,26 +82,24 @@ struct MealTimeCell: View {
                     }
                     .padding(2)
                     
-                    ForEach(array) { food in
+                    ForEach(foodArray) { food in
                         HStack {
                             Text(food.name)
                                 .fontWeight(.light)
                                 .font(.system(size: 13))
-                            
+                                
                             Spacer()
                             
                             Text("\(food.weight.description) грамм")
                                 .fontWeight(.light)
                                 .font(.system(size: 12))
+                                
                         }
-                        .padding(.vertical, 1)
                         .padding(.horizontal, 5)
-                        
                         
                         Divider()
                             .frame(height: 0.5)
                             .background(Color(.systemGray))
-                            .padding(.vertical, 2)
                     }
                     
                     HStack {
@@ -132,5 +130,5 @@ struct MealTimeCell: View {
 }
 
 #Preview {
-    MealTimeCell(partOfDay: "Dinner", array: FoodEaten.mockArray)
+    MealTimeCell(partOfDay: "Dinner", array: Dish.mockArray)
 }
