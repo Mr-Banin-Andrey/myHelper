@@ -9,6 +9,5 @@ import SwiftUI
 
 final class FoodDiaryViewModel: ObservableObject {
     
-    let mockArray = Dish.mockArray
-    
+    let mockFoodEatenDuringDay = FoodEatenDuringDay.mockArray
 }

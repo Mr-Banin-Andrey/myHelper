@@ -35,10 +35,18 @@ struct FoodDiaryView: View {
                     
                     // плитка с приёмом
                     VStack {
-                        //TODO: переписать на добавление одного приёма пищи
-                        MealTimeCell(partOfDay: "Завтрак 6:00", foodArray: viewModel.mockArray)
-                        MealTimeCell(partOfDay: "Обед 12:00", foodArray: viewModel.mockArray)
-                        MealTimeCell(partOfDay: "Ужин 19:00", foodArray: viewModel.mockArray)
+                        MealTimeCell(partOfDay: "Завтрак 6:00", 
+                                     dishes: viewModel.mockFoodEatenDuringDay[0].dishes,
+                                     pills: viewModel.mockFoodEatenDuringDay[0].pills,
+                                     feeling: viewModel.mockFoodEatenDuringDay[0].feeling)
+                        MealTimeCell(partOfDay: "Обед 12:00",
+                                     dishes: viewModel.mockFoodEatenDuringDay[0].dishes,
+                                     pills: viewModel.mockFoodEatenDuringDay[0].pills,
+                                     feeling: viewModel.mockFoodEatenDuringDay[0].feeling)
+                        MealTimeCell(partOfDay: "Ужин 19:00",
+                                     dishes: viewModel.mockFoodEatenDuringDay[0].dishes,
+                                     pills: viewModel.mockFoodEatenDuringDay[0].pills,
+                                     feeling: viewModel.mockFoodEatenDuringDay[0].feeling)
                     }
                     // кнопки
                     HStack {

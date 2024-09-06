@@ -10,7 +10,9 @@ import SwiftUI
 struct MealTimeCell: View {
     
     let partOfDay: String
-    let foodArray: [Dish]
+    let dishes: [Dish]
+    let pills: [Pill]
+    let feeling: FeelingAfterEating
     
     var body: some View {
         VStack {
@@ -33,7 +35,7 @@ struct MealTimeCell: View {
                 VStack {
                     HStack {
                         Text(partOfDay)
-                        
+
                         Spacer()
                         
                         ZStack {
@@ -80,9 +82,12 @@ struct MealTimeCell: View {
                             }
                         }
                     }
-                    .padding(2)
+                    .padding(5)
+                    .background(Color.pink)
+                    .cornerRadius(12)
+                    .padding(.top, 5)
                     
-                    ForEach(foodArray) { food in
+                    ForEach(dishes) { food in
                         HStack {
                             Text(food.name)
                                 .fontWeight(.light)
@@ -106,19 +111,36 @@ struct MealTimeCell: View {
                         Text("Таблетки:")
                         
                         Spacer()
+                            ForEach(pills) { pill in
+                                Text(pill.name)
+                                    .fontWeight(.light)
+                                    .font(.system(size: 13))
+                                    
+                            }
+                    }
+                    .padding(2)
+                    
+                    Divider()
+                        .frame(height: 0.5)
+                        .background(Color(.systemGray))
+                    
+                    HStack {
+                        Text("Ощущения после еды:")
+                            .lineLimit(1)
                         
+                        Spacer()
                     }
                     .padding(2)
                     
                     HStack {
-                        Text("Ощущения после еды:")
-                        
                         Spacer()
-                        
+                        Text(feeling.name)
+                            .fontWeight(.light)
+                            .font(.system(size: 13))
                     }
-                    .padding(2)
                 }
-                .padding(10)
+                .padding(.horizontal, 10)
+                .padding(.bottom, 10)
                 
             }
             .background(Color(uiColor: UIColor.systemMint))
@@ -130,5 +152,8 @@ struct MealTimeCell: View {
 }
 
 #Preview {
-    MealTimeCell(partOfDay: "Dinner", array: Dish.mockArray)
+    MealTimeCell(partOfDay: "Dinner",
+                 dishes: FoodEatenDuringDay.mockArray[0].dishes,
+                 pills: FoodEatenDuringDay.mockArray[0].pills, 
+                 feeling: FoodEatenDuringDay.mockArray[0].feeling)
 }
