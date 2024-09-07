@@ -11,7 +11,7 @@ struct FoodDiaryView: View {
     @StateObject var viewModel: FoodDiaryViewModel
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ZStack {
                 ScrollView(.vertical) {
                     HStack {
@@ -20,16 +20,14 @@ struct FoodDiaryView: View {
                         
                         Spacer()
                         
-                        Button {
-                            print("fork.knife")
-                        } label: {
+                        NavigationLink(destination: AddingFoodView(viewModel: AddingFoodViewModel())) {
                             Image(systemName: "plus")
                                 .foregroundStyle(Color.black)
+                                .frame(width: 80, height: 44)
+                                .background(Color.gray)
+                                .cornerRadius(25)
+                                .shadow(radius: 2)
                         }
-                        .frame(width: 80, height: 44)
-                        .background(Color.gray)
-                        .cornerRadius(25)
-                        .shadow(radius: 2)
                     }
                     .padding(16)
                     
