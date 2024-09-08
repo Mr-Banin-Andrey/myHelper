@@ -38,48 +38,51 @@ struct CustomTextField: View {
                     .animation(.easeIn(duration: 1.0), value: showTitleLabel)
             }
             
-            TextField(showTitleLabel ? "" : placeholder, text: $text) { value in
-                withAnimation {
-                    if value == true {
-                        showTitleLabel = value
+            VStack(spacing: 2) {
+                TextField(showTitleLabel ? "" : placeholder, text: $text) { value in
+                    withAnimation {
+                        if value == true {
+                            showTitleLabel = value
+                        }
                     }
                 }
-            }
-//            .onChange(of: text) { newValue in
-//                switch typeField {
-//                case .email:
-//                    showError = !ValidationData.checkIsEmail(newValue)
-//                case .phone:
-//                    showError = !StringValidator.validatePhoneNumber(newValue)
-//                case .birthday:
-//                    showError = !StringValidator.validateBirthday(newValue)
-//                case .name:
-//                    showError = !ValidationData.isValidName(newValue)
-//                case .emptyField:
-//                    break
-//                }
-//            }
-            .padding(.horizontal, 16)
-            .background(.clear)
-            .font(.body)
-//            .foregroundColor(.titleColor)
-//            .accentColor(.titleColor)
-            .onSubmit { return }
-            .keyboardType(keyboardType)
-            
-            if showError {
-                Text(errorMessage)
-//                    .foregroundColor(.errorTextColor)
-//                    .font(Font(UIFont.sFProTextRegular400.withSize(12)))
+    //            .onChange(of: text) { newValue in
+    //                switch typeField {
+    //                case .email:
+    //                    showError = !ValidationData.checkIsEmail(newValue)
+    //                case .phone:
+    //                    showError = !StringValidator.validatePhoneNumber(newValue)
+    //                case .birthday:
+    //                    showError = !StringValidator.validateBirthday(newValue)
+    //                case .name:
+    //                    showError = !ValidationData.isValidName(newValue)
+    //                case .emptyField:
+    //                    break
+    //                }
+    //            }
+                .padding(.horizontal, 16)
+                .background(.clear)
+                .font(.body)
+    //            .foregroundColor(.titleColor)
+    //            .accentColor(.titleColor)
+                .tint(.gray)
+                .onSubmit { return }
+                .keyboardType(keyboardType)
+                
+                if showError {
+                    Text(errorMessage)
+    //                    .foregroundColor(.errorTextColor)
+    //                    .font(Font(UIFont.sFProTextRegular400.withSize(12)))
+                        .padding(.horizontal, 16)
+                }
+                
+                Divider()
+                    .frame(height: 1)
+                    .background(Color(.systemGray))
                     .padding(.horizontal, 16)
             }
             
-//            CustomDivider()
-//                .padding(.horizontal, 16)
-            Divider()
-                .frame(height: 1)
-                .background(Color(.systemGray))
-                .padding(.horizontal, 16)
+            
         }
     }
 }

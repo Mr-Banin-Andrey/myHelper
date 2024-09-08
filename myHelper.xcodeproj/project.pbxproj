@@ -12,6 +12,7 @@
 		9D360EC82C8BF9A20060F2E1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D360EC72C8BF9A20060F2E1 /* CustomTextField.swift */; };
 		9D360ECB2C8C7D590060F2E1 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D360ECA2C8C7D590060F2E1 /* View.swift */; };
 		9D360ECE2C8C7DF00060F2E1 /* NavigationBarBackButtonTitleHiddenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D360ECD2C8C7DF00060F2E1 /* NavigationBarBackButtonTitleHiddenModifier.swift */; };
+		9D360ED02C8D6F360060F2E1 /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D360ECF2C8D6F360060F2E1 /* CustomPicker.swift */; };
 		9D56E9A52C765120001D16D0 /* MealTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56E9A42C765120001D16D0 /* MealTimeCell.swift */; };
 		9DACB7302C725AE9003716A9 /* myHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB72F2C725AE9003716A9 /* myHelperApp.swift */; };
 		9DACB7322C725AE9003716A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB7312C725AE9003716A9 /* ContentView.swift */; };
@@ -33,6 +34,7 @@
 		9D360EC72C8BF9A20060F2E1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		9D360ECA2C8C7D590060F2E1 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		9D360ECD2C8C7DF00060F2E1 /* NavigationBarBackButtonTitleHiddenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarBackButtonTitleHiddenModifier.swift; sourceTree = "<group>"; };
+		9D360ECF2C8D6F360060F2E1 /* CustomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
 		9D56E9A42C765120001D16D0 /* MealTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTimeCell.swift; sourceTree = "<group>"; };
 		9DACB72C2C725AE9003716A9 /* myHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DACB72F2C725AE9003716A9 /* myHelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myHelperApp.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		9D360EC62C8BF96C0060F2E1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9D360ECF2C8D6F360060F2E1 /* CustomPicker.swift */,
 				9D360EC72C8BF9A20060F2E1 /* CustomTextField.swift */,
 			);
 			path = Common;
@@ -301,6 +304,7 @@
 			files = (
 				9D360EC82C8BF9A20060F2E1 /* CustomTextField.swift in Sources */,
 				9DACB7492C726D3D003716A9 /* SettingsView.swift in Sources */,
+				9D360ED02C8D6F360060F2E1 /* CustomPicker.swift in Sources */,
 				9D360ECB2C8C7D590060F2E1 /* View.swift in Sources */,
 				9D10761D2C8B237900ACC4B4 /* AddingFoodViewModel.swift in Sources */,
 				9D10761B2C8B236F00ACC4B4 /* AddingFoodView.swift in Sources */,

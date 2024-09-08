@@ -20,7 +20,8 @@ struct FoodDiaryView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: AddingFoodView(viewModel: AddingFoodViewModel())) {
+                        NavigationLink(destination: AddingFoodView(viewModel: AddingFoodViewModel())
+                        ) {
                             Image(systemName: "plus")
                                 .foregroundStyle(Color.black)
                                 .frame(width: 80, height: 44)

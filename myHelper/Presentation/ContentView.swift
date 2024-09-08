@@ -20,7 +20,14 @@ struct ContentView: View {
                     Label("Настройки", systemImage: "gearshape")
                 }
         }
-        
+        .tint(.black)
+        .onAppear(perform: {
+            UITabBar.appearance().unselectedItemTintColor = .systemBrown
+            UITabBar.appearance().backgroundColor = .systemGray4.withAlphaComponent(0.4)
+            UITabBarItem.appearance().badgeColor = .systemPink
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.systemPink]
+//            UITabBar.appearance().scrollEdgeAppearance = UITabBarAppearance()
+        })
     }
 }
 

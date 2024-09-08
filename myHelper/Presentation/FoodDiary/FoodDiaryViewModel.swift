@@ -11,8 +11,4 @@ final class FoodDiaryViewModel: ObservableObject {
     
     let mockFoodEatenDuringDay = FoodEatenDuringDay.mockArray
     
-    func showAddingFoodScreen() {
-//        NavigationLink(destination:
-//                        DailySummaryView(viewModel: DailySummaryViewModel()))
-    }
 }
