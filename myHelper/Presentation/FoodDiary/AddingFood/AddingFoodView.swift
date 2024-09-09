@@ -51,17 +51,38 @@ struct AddingFoodView: View {
                         }
                     }
                 }
-                .padding(.vertical, 24)
-                .background(Color.teal)
+                .padding(.vertical, 16)
+                .background(Color(uiColor: UIColor(_colorLiteralRed: 0.0, green: 0.0, blue: 0.5, alpha: 0.1)))
+                .cornerRadius(16)
+                .padding(1)
             }
             
-            
             VStack {
-                CustomTextField(
-                    label: "Блюдо",
-                    showError: .constant(false),
-                    text: $viewModel.dish,
-                    showTitleLabel: true)
+                HStack(spacing: 5) {
+                    CustomTextField(
+                        label: "Блюдо",
+                        showError: .constant(false),
+                        text: $viewModel.dish,
+                        showTitleLabel: true)
+                    .padding(viewModel.isShowView ? .leading : .horizontal, 16)
+                    
+                    if viewModel.isShowView {
+                        CustomTextField(
+                            label: "Вес",
+                            showError: .constant(false),
+                            text: $viewModel.dish,
+                            showTitleLabel: true)
+                        .frame(width: 35)
+                        
+                        VStack {
+                            Spacer()
+                            Text("г")
+                                .padding(.bottom, 3)
+                        }
+                        .padding(.trailing, 16)
+                    }
+                }
+                
                 
                 Button(action: {
                     withAnimation {
@@ -83,60 +104,88 @@ struct AddingFoodView: View {
                 //на переделать на ролик пикер
 
                 if viewModel.isShowView {
-                    HStack {
-                        Text("203 г.")
-                            .foregroundStyle(Color.yellow)
-                            .padding(15)
-                            .background(Color.gray)
-                            .cornerRadius(25)
-
-                        Text("230 ккал")
-                            .foregroundStyle(Color.yellow)
-                            .padding(15)
-                            .background(Color.gray)
-                            .cornerRadius(25)
-
-                        Text("25 белков")
-                            .foregroundStyle(Color.yellow)
-                            .padding(15)
-                            .background(Color.gray)
-                            .cornerRadius(25)
-                    }
-
-                    HStack {
-                        Text("Вес")
-                            .foregroundStyle(Color.yellow)
-                            .padding(15)
-                            .background(Color.gray)
-                            .cornerRadius(25)
-
+                    HStack(spacing: 5) {
                         Text("Каллории")
                             .foregroundStyle(Color.yellow)
-                            .padding(15)
+                            .padding(10)
                             .background(Color.gray)
                             .cornerRadius(25)
-                    }
-                    
-                    HStack {
+                        
                         Text("Белки")
                             .foregroundStyle(Color.yellow)
-                            .padding(15)
+                            .padding(10)
                             .background(Color.gray)
                             .cornerRadius(25)
 
                         Text("Жиры")
                             .foregroundStyle(Color.yellow)
-                            .padding(15)
+                            .padding(10)
                             .background(Color.gray)
                             .cornerRadius(25)
 
                         Text("Углеводы")
                             .foregroundStyle(Color.yellow)
-                            .padding(15)
+                            .padding(10)
                             .background(Color.gray)
                             .cornerRadius(25)
                     }
+                    
+                    HStack(spacing: 5) {
+                        VStack {
+                            Text("289 г")
+                                .foregroundStyle(Color.yellow)
+                            
+                            Text("ккал")
+                                .foregroundStyle(Color.yellow)
+                                .font(.caption)
+                        }
+                        .padding(.vertical, 5)
+                        .padding(.horizontal, 15)
+                        .background(Color.gray)
+                        .clipShape(.capsule(style: .circular))
+                        
+                        VStack {
+                            Text("25,0 г")
+                                .foregroundStyle(Color.yellow)
+                            
+                            Text("белков")
+                                .foregroundStyle(Color.yellow)
+                                .font(.caption)
+                        }
+                        .padding(.vertical, 5)
+                        .padding(.horizontal, 15)
+                        .background(Color.gray)
+                        .clipShape(.capsule(style: .circular))
+                        
+                        VStack {
+                            Text("14,6 г")
+                                .foregroundStyle(Color.yellow)
+                            
+                            Text("жиры")
+                                .foregroundStyle(Color.yellow)
+                                .font(.caption)
+                        }
+                        .padding(.vertical, 5)
+                        .padding(.horizontal, 15)
+                        .background(Color.gray)
+                        .clipShape(.capsule(style: .circular))
+                        
+                        VStack {
+                            Text("68,3 г")
+                                .foregroundStyle(Color.yellow)
+                            
+                            Text("углеводы")
+                                .foregroundStyle(Color.yellow)
+                                .font(.caption)
+                        }
+                        .padding(.vertical, 5)
+                        .padding(.horizontal, 15)
+                        .background(Color.gray)
+                        .clipShape(.capsule(style: .circular))
+                        
+                    }
                 }
+                
 //                .sheet(isPresented: $viewModel.showBottomSheet) {
 //                    if let task = viewModel.selectedTask {
 //                        if #available(iOS 16.0, *) {
@@ -150,17 +199,19 @@ struct AddingFoodView: View {
 //                    }
 //                }
                 
-                
                 NavigationLink(destination: DailySummaryView(viewModel: DailySummaryViewModel())) {
                     Text("Добавить")
                         .foregroundStyle(Color.yellow)
                         .padding(15)
-                        .background(Color.gray)
+                        .background(Color.black)
                         .cornerRadius(25)
                 }
             }
-//            .background(Color.orange)
             .padding(.vertical, 16)
+            .background(Color(uiColor: UIColor(_colorLiteralRed: 0.5, green: 0.5, blue: 0.0, alpha: 0.1)))
+            .cornerRadius(16)
+            .padding(1)
+            
         }
         .navigationTitle("Добавить прием пищи")
         .navigationBarBackButtonTitleHidden()
@@ -170,22 +221,3 @@ struct AddingFoodView: View {
 #Preview {
     AddingFoodView(viewModel: AddingFoodViewModel())
 }
-
-//if isOpen {
-//    ScrollView {
-//        LazyVGrid(columns: columns, alignment: .center, spacing: 10) {
-//            ForEach(closedCards) { card in
-//                PlayerCardView(
-//                    isBigSizeCard: false,
-//                    isNewCard: false,
-//                    isClosedCard: openedCards[card.id] ?? false,
-//                    card: card,
-//                    cardImage: images[card.id] ?? UIImage.profilePlaceholderImage,
-//                    countCards: "\(cardCount[card.id] ?? 0)"
-//                ) { card in
-//                    onCardTap(card)
-//                }
-//            }
-//        }
-//    }
-//}

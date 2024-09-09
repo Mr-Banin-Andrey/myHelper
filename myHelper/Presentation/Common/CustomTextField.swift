@@ -33,7 +33,7 @@ struct CustomTextField: View {
                     .foregroundColor(.secondary)
                     .font(.caption)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal, 16)
+//                    .padding(.horizontal, 16)
                     .opacity(showTitleLabel ? 1 : 0)
                     .animation(.easeIn(duration: 1.0), value: showTitleLabel)
             }
@@ -60,7 +60,7 @@ struct CustomTextField: View {
     //                    break
     //                }
     //            }
-                .padding(.horizontal, 16)
+//                .padding(.horizontal, 16)
                 .background(.clear)
                 .font(.body)
     //            .foregroundColor(.titleColor)
@@ -73,16 +73,14 @@ struct CustomTextField: View {
                     Text(errorMessage)
     //                    .foregroundColor(.errorTextColor)
     //                    .font(Font(UIFont.sFProTextRegular400.withSize(12)))
-                        .padding(.horizontal, 16)
+//                        .padding(.horizontal, 16)
                 }
                 
                 Divider()
                     .frame(height: 1)
                     .background(Color(.systemGray))
-                    .padding(.horizontal, 16)
+//                    .padding(.horizontal, 16)
             }
-            
-            
         }
     }
 }

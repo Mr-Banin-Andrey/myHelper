@@ -23,6 +23,7 @@ struct DailySummaryView: View {
                 .padding(.vertical, 4)
 
         }
+        .navigationBarBackButtonTitleHidden()
     }
 }
 

@@ -12,5 +12,5 @@ final class AddingFoodViewModel: ObservableObject {
     @Published var dish: String = ""
     @Published var dishes: FoodEatenDuringDay = .mockFood
     
-    @Published var isShowView: Bool = false
+    @Published var isShowView: Bool = true
 }

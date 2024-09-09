@@ -23,7 +23,7 @@ struct FoodDiaryView: View {
                         NavigationLink(destination: AddingFoodView(viewModel: AddingFoodViewModel())
                         ) {
                             Image(systemName: "plus")
-                                .foregroundStyle(Color.black)
+                                .foregroundStyle(Color.yellow)
                                 .frame(width: 80, height: 44)
                                 .background(Color.gray)
                                 .cornerRadius(25)
@@ -53,9 +53,9 @@ struct FoodDiaryView: View {
                             print("fork.knife")
                         } label: {
                             Image(systemName: "plus")
-                                .foregroundStyle(Color.black)
+                                .foregroundStyle(Color.yellow)
                             Image(systemName: "fork.knife")
-                                .foregroundStyle(Color.black)
+                                .foregroundStyle(Color.yellow)
                         }
                         .frame(width: 100, height: 52)
                         .background(Color.gray)
@@ -66,7 +66,7 @@ struct FoodDiaryView: View {
                             print("pills.fill")
                         } label: {
                             Image(systemName: "pills.fill")
-                                .foregroundStyle(Color.black)
+                                .foregroundStyle(Color.yellow)
                         }
                         .frame(width: 100, height: 52)
                         .background(Color.gray)
@@ -77,7 +77,7 @@ struct FoodDiaryView: View {
                             print("figure.mind.and.body")
                         } label: {
                             Image(systemName: "figure.mind.and.body")
-                                .foregroundStyle(Color.black)
+                                .foregroundStyle(Color.yellow)
                         }
                         .frame(width: 100, height: 52)
                         .background(Color.gray)
@@ -92,7 +92,7 @@ struct FoodDiaryView: View {
                             print("toilet.fill")
                         } label: {
                             Image(systemName: "toilet.fill")
-                                .foregroundStyle(Color.black)
+                                .foregroundStyle(Color.yellow)
                         }
                         .frame(width: 100, height: 52)
                         .background(Color.gray)

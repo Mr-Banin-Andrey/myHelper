@@ -81,9 +81,11 @@ struct MealTimeCell: View {
                                 }
                             }
                         }
+                        
                     }
-                    .padding(5)
-                    .background(Color.pink)
+                    .padding(.vertical, 5)
+                    .padding(.horizontal, 8)
+                    .background(Color(uiColor: UIColor(_colorLiteralRed: 0.4, green: 0.0, blue: 0.1, alpha: 0.4)))
                     .cornerRadius(12)
                     .padding(.top, 5)
                     
@@ -109,14 +111,16 @@ struct MealTimeCell: View {
                     
                     HStack {
                         Text("Таблетки:")
+                            .lineLimit(1)
                         
                         Spacer()
-                            ForEach(pills) { pill in
-                                Text(pill.name)
-                                    .fontWeight(.light)
-                                    .font(.system(size: 13))
-                                    
-                            }
+                        
+                        ForEach(pills) { pill in
+                            Text(pill.name)
+                                .fontWeight(.light)
+                                .font(.system(size: 13))
+                                
+                        }
                     }
                     .padding(2)
                     
@@ -143,9 +147,9 @@ struct MealTimeCell: View {
                 .padding(.bottom, 10)
                 
             }
-            .background(Color(uiColor: UIColor.systemMint))
+            .background(Color(uiColor: UIColor(_colorLiteralRed: 0.0, green: 0.5, blue: 0.0, alpha: 0.1)))
             .cornerRadius(15)
-            .shadow(radius: 2)
+//            .shadow(radius: 2)
             .padding(.horizontal, 16)
         }
     }
