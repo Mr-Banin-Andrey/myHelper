@@ -51,8 +51,10 @@ struct CustomPicker: View {
                 }
                 .pickerStyle(.wheel)
                 
-                Text(title)
-                    .padding(16)
+                if title != "" {
+                    Text(title)
+                        .padding(16)
+                }
             }
 //            .background(Color(uiColor: UIColor(_colorLiteralRed: 0.5, green: 0.5, blue: 0.0, alpha: 0.1)))
 //            .cornerRadius(15)

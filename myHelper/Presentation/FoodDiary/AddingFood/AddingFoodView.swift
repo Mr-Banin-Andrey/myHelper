@@ -74,6 +74,7 @@ struct AddingFoodView: View {
                             showTitleLabel: true)
                         .frame(width: 35)
                         
+                        //TODO: добавить пикер с роллером
                         VStack {
                             Spacer()
                             Text("г")
@@ -101,114 +102,14 @@ struct AddingFoodView: View {
                     .padding(.bottom, 16)
                 })
 
-                //на переделать на ролик пикер
-
                 if viewModel.isShowView {
                     HStack(spacing: 5) {
-                        
-                        VStack {
-                            Text(viewModel.isShowCaloriesView ? "\(viewModel.calories) г": "Каллории")
-                                .foregroundStyle(Color.yellow)
-                            if viewModel.isShowCaloriesView {
-                                Text("ккал")
-                                    .foregroundStyle(Color.yellow)
-                                    .font(.caption)
-                            }
-                        }
-                        .padding(.vertical, viewModel.isShowCaloriesView ? 5 : 10)
-                        .padding(.horizontal, viewModel.isShowCaloriesView ? 15 : 10)
-                        .background(Color.gray)
-                        .clipShape(.capsule)
-                        .onTapGesture {
-                            viewModel.showBottomSheet = true
-                        }
-                        .sheet(isPresented: $viewModel.showBottomSheet) {
-                                CustomPicker(title: "Каллории", number: viewModel.calories) { calories in
-                                    withAnimation {
-                                        viewModel.calories = calories
-                                        viewModel.isShowCaloriesView = true
-                                    }
-                                }
-                                .presentationDetents([.height(300)])
-                                .presentationDragIndicator(.visible)
-                        }
-
-                        
-                        ///////////////////////////                        ///////////////////////////                        ///////////////////////////
-
-                        Text("Белки")
-                            .foregroundStyle(Color.yellow)
-                            .padding(10)
-                            .background(Color.gray)
-                            .cornerRadius(25)
-
-                        Text("Жиры")
-                            .foregroundStyle(Color.yellow)
-                            .padding(10)
-                            .background(Color.gray)
-                            .cornerRadius(25)
-
-                        Text("Углеводы")
-                            .foregroundStyle(Color.yellow)
-                            .padding(10)
-                            .background(Color.gray)
-                            .cornerRadius(25)
+                        CPFCCell(name: "Калории", unitOfMeasurement: "ккал", shortName: "ккал", value: 100)
+                        //TODO: передалать на Double
+                        CPFCCell(name: "Белки", unitOfMeasurement: "г", shortName: "белки", value: 0)
+                        CPFCCell(name: "Жиры", unitOfMeasurement: "г", shortName: "жиры", value: 0)
+                        CPFCCell(name: "Углеводы", unitOfMeasurement: "г", shortName: "углеводы", value: 0)
                     }
-                    
-//                    HStack(spacing: 5) {
-//                        VStack {
-//                            Text("289 г")
-//                                .foregroundStyle(Color.yellow)
-//                            
-//                            Text("ккал")
-//                                .foregroundStyle(Color.yellow)
-//                                .font(.caption)
-//                        }
-//                        .padding(.vertical, 5)
-//                        .padding(.horizontal, 15)
-//                        .background(Color.gray)
-//                        .clipShape(.capsule(style: .circular))
-//                        
-//                        VStack {
-//                            Text("25,0 г")
-//                                .foregroundStyle(Color.yellow)
-//                            
-//                            Text("белков")
-//                                .foregroundStyle(Color.yellow)
-//                                .font(.caption)
-//                        }
-//                        .padding(.vertical, 5)
-//                        .padding(.horizontal, 15)
-//                        .background(Color.gray)
-//                        .clipShape(.capsule(style: .circular))
-//                        
-//                        VStack {
-//                            Text("14,6 г")
-//                                .foregroundStyle(Color.yellow)
-//                            
-//                            Text("жиры")
-//                                .foregroundStyle(Color.yellow)
-//                                .font(.caption)
-//                        }
-//                        .padding(.vertical, 5)
-//                        .padding(.horizontal, 15)
-//                        .background(Color.gray)
-//                        .clipShape(.capsule(style: .circular))
-//                        
-//                        VStack {
-//                            Text("68,3 г")
-//                                .foregroundStyle(Color.yellow)
-//                            
-//                            Text("углеводы")
-//                                .foregroundStyle(Color.yellow)
-//                                .font(.caption)
-//                        }
-//                        .padding(.vertical, 5)
-//                        .padding(.horizontal, 15)
-//                        .background(Color.gray)
-//                        .clipShape(.capsule(style: .circular))
-//                        
-//                    }
                 }
                 
                 NavigationLink(destination: DailySummaryView(viewModel: DailySummaryViewModel())) {
