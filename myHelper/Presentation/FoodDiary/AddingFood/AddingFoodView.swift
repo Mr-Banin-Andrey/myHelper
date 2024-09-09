@@ -60,7 +60,7 @@ struct AddingFoodView: View {
             VStack {
                 HStack(spacing: 5) {
                     CustomTextField(
-                        label: "Блюдо \(viewModel.carbohydrates)",
+                        label: "Блюдо",
                         showError: .constant(false),
                         text: $viewModel.dish,
                         showTitleLabel: true)
