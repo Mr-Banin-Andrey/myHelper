@@ -15,7 +15,7 @@ struct CPFCCell: View {
     
     @State private var isShowView: Bool = false
     @State private var showBottomSheet: Bool = false
-    @State var value: Int
+    @Binding var value: Int
     
     var body: some View {
         VStack {

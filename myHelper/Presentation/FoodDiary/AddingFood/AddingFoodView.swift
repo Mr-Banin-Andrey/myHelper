@@ -60,7 +60,7 @@ struct AddingFoodView: View {
             VStack {
                 HStack(spacing: 5) {
                     CustomTextField(
-                        label: "Блюдо",
+                        label: "Блюдо \(viewModel.carbohydrates)",
                         showError: .constant(false),
                         text: $viewModel.dish,
                         showTitleLabel: true)
@@ -104,11 +104,11 @@ struct AddingFoodView: View {
 
                 if viewModel.isShowView {
                     HStack(spacing: 5) {
-                        CPFCCell(name: "Калории", unitOfMeasurement: "ккал", shortName: "ккал", value: 100)
+                        CPFCCell(name: "Калории", unitOfMeasurement: "ккал", shortName: "ккал", value: $viewModel.calories)
                         //TODO: передалать на Double
-                        CPFCCell(name: "Белки", unitOfMeasurement: "г", shortName: "белки", value: 0)
-                        CPFCCell(name: "Жиры", unitOfMeasurement: "г", shortName: "жиры", value: 0)
-                        CPFCCell(name: "Углеводы", unitOfMeasurement: "г", shortName: "углеводы", value: 0)
+                        CPFCCell(name: "Белки", unitOfMeasurement: "г", shortName: "белки", value: $viewModel.proteins)
+                        CPFCCell(name: "Жиры", unitOfMeasurement: "г", shortName: "жиры", value: $viewModel.fats)
+                        CPFCCell(name: "Углеводы", unitOfMeasurement: "г", shortName: "углеводы", value: $viewModel.carbohydrates)
                     }
                 }
                 
