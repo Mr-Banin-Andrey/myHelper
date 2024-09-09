@@ -8,38 +8,60 @@
 import SwiftUI
 
 struct CustomPicker: View {
+    @Environment(\.dismiss) var dismiss
     
     var title: String
-    @State private var number: Int = 100
+    @State var number: Int = 100
+    
+    let action: (Int) -> Void
     
     var body: some View {
-        
-        ZStack {
-            VStack {
-                HStack {
-                    Text("\(number)")
-                        .foregroundStyle(Color(uiColor: UIColor.systemYellow))
-                    Text(title)
-                        .foregroundStyle(Color(uiColor: UIColor.systemYellow))
-                }
-                .padding(8)
-                .background(Color(uiColor: UIColor.systemGray))
-                .clipShape(.capsule(style: .circular))
+        VStack(spacing: 1) {
+            HStack {
+                Text("\(number)")
                 
-                HStack {
-                    Picker("", selection: $number) {
-                        ForEach(1...500, id: \.self) { number in
-                            Text("\(number)")
-                                .foregroundStyle(.secondary)
-                        }
-                    }
-                    .pickerStyle(.wheel)
-                    
-                    Text(title)
-                        .foregroundStyle(.secondary)
-                }
-                .padding(16)
+                Text(title)
             }
+            .padding(8)
+            .padding(.top, 16)
+
+            Divider()
+                .frame(height: 0.5)
+                .background(Color(.systemGray))
+                .padding(.horizontal, 16)
+            
+            Button(action: {
+                action(number)
+                dismiss()
+            }, label: {
+                Text("Добавить")
+                    .foregroundStyle(Color.yellow)
+                    .padding(.horizontal, 30)
+                    .padding(.vertical, 16)
+                    .background(Color.gray)
+                    .cornerRadius(25)
+                    .padding(.top, 16)
+            })
+            
+            HStack {
+                Picker("", selection: $number) {
+                    ForEach(1...500, id: \.self) { number in
+                        Text("\(number)")
+                    }
+                }
+                .pickerStyle(.wheel)
+                
+                Text(title)
+                    .padding(16)
+            }
+//            .background(Color(uiColor: UIColor(_colorLiteralRed: 0.5, green: 0.5, blue: 0.0, alpha: 0.1)))
+//            .cornerRadius(15)
+            .padding(16)
         }
+        .frame(maxHeight: 300)
     }
 }
+//
+//#Preview {
+//    CustomPicker(title: "Каллории")
+//}

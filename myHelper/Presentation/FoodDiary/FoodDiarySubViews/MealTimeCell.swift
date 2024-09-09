@@ -147,10 +147,9 @@ struct MealTimeCell: View {
                 .padding(.bottom, 10)
                 
             }
-            .background(Color(uiColor: UIColor(_colorLiteralRed: 0.0, green: 0.5, blue: 0.0, alpha: 0.1)))
+            .background(Color(uiColor: UIColor(_colorLiteralRed: 0.5, green: 0.5, blue: 0.0, alpha: 0.1)))
             .cornerRadius(15)
-//            .shadow(radius: 2)
-            .padding(.horizontal, 16)
+            .padding(.horizontal, 8)
         }
     }
 }

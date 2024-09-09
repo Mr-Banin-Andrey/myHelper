@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddingFoodView: View {
     @StateObject var viewModel: AddingFoodViewModel
-
+    
     var body: some View {
         ScrollView(.vertical) {
             if !viewModel.dishes.dishes.isEmpty {
@@ -70,7 +70,7 @@ struct AddingFoodView: View {
                         CustomTextField(
                             label: "Вес",
                             showError: .constant(false),
-                            text: $viewModel.dish,
+                            text: $viewModel.weight,
                             showTitleLabel: true)
                         .frame(width: 35)
                         
@@ -82,7 +82,6 @@ struct AddingFoodView: View {
                         .padding(.trailing, 16)
                     }
                 }
-                
                 
                 Button(action: {
                     withAnimation {
@@ -99,18 +98,44 @@ struct AddingFoodView: View {
                     .foregroundStyle(Color(.systemGray))
                     .padding(.horizontal, 16)
                     .padding(.top, 8)
+                    .padding(.bottom, 16)
                 })
 
                 //на переделать на ролик пикер
 
                 if viewModel.isShowView {
                     HStack(spacing: 5) {
-                        Text("Каллории")
-                            .foregroundStyle(Color.yellow)
-                            .padding(10)
-                            .background(Color.gray)
-                            .cornerRadius(25)
                         
+                        VStack {
+                            Text(viewModel.isShowCaloriesView ? "\(viewModel.calories) г": "Каллории")
+                                .foregroundStyle(Color.yellow)
+                            if viewModel.isShowCaloriesView {
+                                Text("ккал")
+                                    .foregroundStyle(Color.yellow)
+                                    .font(.caption)
+                            }
+                        }
+                        .padding(.vertical, viewModel.isShowCaloriesView ? 5 : 10)
+                        .padding(.horizontal, viewModel.isShowCaloriesView ? 15 : 10)
+                        .background(Color.gray)
+                        .clipShape(.capsule)
+                        .onTapGesture {
+                            viewModel.showBottomSheet = true
+                        }
+                        .sheet(isPresented: $viewModel.showBottomSheet) {
+                                CustomPicker(title: "Каллории", number: viewModel.calories) { calories in
+                                    withAnimation {
+                                        viewModel.calories = calories
+                                        viewModel.isShowCaloriesView = true
+                                    }
+                                }
+                                .presentationDetents([.height(300)])
+                                .presentationDragIndicator(.visible)
+                        }
+
+                        
+                        ///////////////////////////                        ///////////////////////////                        ///////////////////////////
+
                         Text("Белки")
                             .foregroundStyle(Color.yellow)
                             .padding(10)
@@ -130,74 +155,61 @@ struct AddingFoodView: View {
                             .cornerRadius(25)
                     }
                     
-                    HStack(spacing: 5) {
-                        VStack {
-                            Text("289 г")
-                                .foregroundStyle(Color.yellow)
-                            
-                            Text("ккал")
-                                .foregroundStyle(Color.yellow)
-                                .font(.caption)
-                        }
-                        .padding(.vertical, 5)
-                        .padding(.horizontal, 15)
-                        .background(Color.gray)
-                        .clipShape(.capsule(style: .circular))
-                        
-                        VStack {
-                            Text("25,0 г")
-                                .foregroundStyle(Color.yellow)
-                            
-                            Text("белков")
-                                .foregroundStyle(Color.yellow)
-                                .font(.caption)
-                        }
-                        .padding(.vertical, 5)
-                        .padding(.horizontal, 15)
-                        .background(Color.gray)
-                        .clipShape(.capsule(style: .circular))
-                        
-                        VStack {
-                            Text("14,6 г")
-                                .foregroundStyle(Color.yellow)
-                            
-                            Text("жиры")
-                                .foregroundStyle(Color.yellow)
-                                .font(.caption)
-                        }
-                        .padding(.vertical, 5)
-                        .padding(.horizontal, 15)
-                        .background(Color.gray)
-                        .clipShape(.capsule(style: .circular))
-                        
-                        VStack {
-                            Text("68,3 г")
-                                .foregroundStyle(Color.yellow)
-                            
-                            Text("углеводы")
-                                .foregroundStyle(Color.yellow)
-                                .font(.caption)
-                        }
-                        .padding(.vertical, 5)
-                        .padding(.horizontal, 15)
-                        .background(Color.gray)
-                        .clipShape(.capsule(style: .circular))
-                        
-                    }
-                }
-                
-//                .sheet(isPresented: $viewModel.showBottomSheet) {
-//                    if let task = viewModel.selectedTask {
-//                        if #available(iOS 16.0, *) {
-//                            TaskInfoSheetView(sheetHeight: $viewModel.sheetHeight, task: task)
-//                                .presentationDetents([.height(viewModel.sheetHeight)])
-//                        } else {
-//                            TaskInfoSheetView(sheetHeight: $viewModel.sheetHeight, task: task)
+//                    HStack(spacing: 5) {
+//                        VStack {
+//                            Text("289 г")
+//                                .foregroundStyle(Color.yellow)
+//                            
+//                            Text("ккал")
+//                                .foregroundStyle(Color.yellow)
+//                                .font(.caption)
 //                        }
-//                    } else {
-//                        Text("No task selected")
+//                        .padding(.vertical, 5)
+//                        .padding(.horizontal, 15)
+//                        .background(Color.gray)
+//                        .clipShape(.capsule(style: .circular))
+//                        
+//                        VStack {
+//                            Text("25,0 г")
+//                                .foregroundStyle(Color.yellow)
+//                            
+//                            Text("белков")
+//                                .foregroundStyle(Color.yellow)
+//                                .font(.caption)
+//                        }
+//                        .padding(.vertical, 5)
+//                        .padding(.horizontal, 15)
+//                        .background(Color.gray)
+//                        .clipShape(.capsule(style: .circular))
+//                        
+//                        VStack {
+//                            Text("14,6 г")
+//                                .foregroundStyle(Color.yellow)
+//                            
+//                            Text("жиры")
+//                                .foregroundStyle(Color.yellow)
+//                                .font(.caption)
+//                        }
+//                        .padding(.vertical, 5)
+//                        .padding(.horizontal, 15)
+//                        .background(Color.gray)
+//                        .clipShape(.capsule(style: .circular))
+//                        
+//                        VStack {
+//                            Text("68,3 г")
+//                                .foregroundStyle(Color.yellow)
+//                            
+//                            Text("углеводы")
+//                                .foregroundStyle(Color.yellow)
+//                                .font(.caption)
+//                        }
+//                        .padding(.vertical, 5)
+//                        .padding(.horizontal, 15)
+//                        .background(Color.gray)
+//                        .clipShape(.capsule(style: .circular))
+//                        
 //                    }
-//                }
+                }
                 
                 NavigationLink(destination: DailySummaryView(viewModel: DailySummaryViewModel())) {
                     Text("Добавить")

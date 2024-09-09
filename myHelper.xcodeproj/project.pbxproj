@@ -13,6 +13,7 @@
 		9D360ECB2C8C7D590060F2E1 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D360ECA2C8C7D590060F2E1 /* View.swift */; };
 		9D360ECE2C8C7DF00060F2E1 /* NavigationBarBackButtonTitleHiddenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D360ECD2C8C7DF00060F2E1 /* NavigationBarBackButtonTitleHiddenModifier.swift */; };
 		9D360ED02C8D6F360060F2E1 /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D360ECF2C8D6F360060F2E1 /* CustomPicker.swift */; };
+		9D360ED62C8F097D0060F2E1 /* CPFCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D360ED52C8F097D0060F2E1 /* CPFCCell.swift */; };
 		9D56E9A52C765120001D16D0 /* MealTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56E9A42C765120001D16D0 /* MealTimeCell.swift */; };
 		9DACB7302C725AE9003716A9 /* myHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB72F2C725AE9003716A9 /* myHelperApp.swift */; };
 		9DACB7322C725AE9003716A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DACB7312C725AE9003716A9 /* ContentView.swift */; };
@@ -35,6 +36,7 @@
 		9D360ECA2C8C7D590060F2E1 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		9D360ECD2C8C7DF00060F2E1 /* NavigationBarBackButtonTitleHiddenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarBackButtonTitleHiddenModifier.swift; sourceTree = "<group>"; };
 		9D360ECF2C8D6F360060F2E1 /* CustomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
+		9D360ED52C8F097D0060F2E1 /* CPFCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFCCell.swift; sourceTree = "<group>"; };
 		9D56E9A42C765120001D16D0 /* MealTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTimeCell.swift; sourceTree = "<group>"; };
 		9DACB72C2C725AE9003716A9 /* myHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DACB72F2C725AE9003716A9 /* myHelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myHelperApp.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		9D1076192C8B230500ACC4B4 /* AddingFood */ = {
 			isa = PBXGroup;
 			children = (
+				9D360ED22C8F07A70060F2E1 /* SubViews */,
 				9D10761A2C8B236F00ACC4B4 /* AddingFoodView.swift */,
 				9D10761C2C8B237900ACC4B4 /* AddingFoodViewModel.swift */,
 			);
@@ -95,6 +98,14 @@
 				9D360ECD2C8C7DF00060F2E1 /* NavigationBarBackButtonTitleHiddenModifier.swift */,
 			);
 			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		9D360ED22C8F07A70060F2E1 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				9D360ED52C8F097D0060F2E1 /* CPFCCell.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		9DACB7232C725AE9003716A9 = {
@@ -191,19 +202,19 @@
 			children = (
 				9D1076192C8B230500ACC4B4 /* AddingFood */,
 				9DACB74F2C73CF57003716A9 /* DailySummary */,
-				9DACB74C2C72703C003716A9 /* SubViews */,
+				9DACB74C2C72703C003716A9 /* FoodDiarySubViews */,
 				9DACB7442C7261EF003716A9 /* FoodDiaryView.swift */,
 				9DACB7462C7261FC003716A9 /* FoodDiaryViewModel.swift */,
 			);
 			path = FoodDiary;
 			sourceTree = "<group>";
 		};
-		9DACB74C2C72703C003716A9 /* SubViews */ = {
+		9DACB74C2C72703C003716A9 /* FoodDiarySubViews */ = {
 			isa = PBXGroup;
 			children = (
 				9D56E9A42C765120001D16D0 /* MealTimeCell.swift */,
 			);
-			path = SubViews;
+			path = FoodDiarySubViews;
 			sourceTree = "<group>";
 		};
 		9DACB74F2C73CF57003716A9 /* DailySummary */ = {
@@ -304,6 +315,7 @@
 			files = (
 				9D360EC82C8BF9A20060F2E1 /* CustomTextField.swift in Sources */,
 				9DACB7492C726D3D003716A9 /* SettingsView.swift in Sources */,
+				9D360ED62C8F097D0060F2E1 /* CPFCCell.swift in Sources */,
 				9D360ED02C8D6F360060F2E1 /* CustomPicker.swift in Sources */,
 				9D360ECB2C8C7D590060F2E1 /* View.swift in Sources */,
 				9D10761D2C8B237900ACC4B4 /* AddingFoodViewModel.swift in Sources */,
