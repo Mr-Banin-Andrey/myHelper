@@ -104,20 +104,12 @@ struct AddingFoodView: View {
 
                 if viewModel.isShowView {
                     HStack(spacing: 5) {
-                        CPFCCell(name: "Калории", unitOfMeasurement: "ккал", shortName: "ккал", value: $viewModel.calories)
-                        //TODO: передалать на Double
-                        CPFCCell(name: "Белки", unitOfMeasurement: "г", shortName: "белки", value: $viewModel.proteins)
-                        CPFCCell(name: "Жиры", unitOfMeasurement: "г", shortName: "жиры", value: $viewModel.fats)
-                        CPFCCell(name: "Углеводы", unitOfMeasurement: "г", shortName: "углеводы", value: $viewModel.carbohydrates)
+//                        CPFCCell(name: "Калории", unitOfMeasurement: "ккал", shortName: "ккал", value: $viewModel.calories)
+//                        //TODO: передалать на Double
+//                        CPFCCell(name: "Белки", unitOfMeasurement: "г", shortName: "белки", value: $viewModel.proteins)
+//                        CPFCCell(name: "Жиры", unitOfMeasurement: "г", shortName: "жиры", value: $viewModel.fats)
+//                        CPFCCell(name: "Углеводы", unitOfMeasurement: "г", shortName: "углеводы", value: $viewModel.carbohydrates)
                     }
-                }
-                
-                NavigationLink(destination: DailySummaryView(viewModel: DailySummaryViewModel())) {
-                    Text("Добавить")
-                        .foregroundStyle(Color.yellow)
-                        .padding(15)
-                        .background(Color.black)
-                        .cornerRadius(25)
                 }
             }
             .padding(.vertical, 16)
@@ -125,6 +117,13 @@ struct AddingFoodView: View {
             .cornerRadius(16)
             .padding(1)
             
+            NavigationLink(destination: DailySummaryView(viewModel: DailySummaryViewModel())) {
+                Text("Добавить")
+                    .foregroundStyle(Color.yellow)
+                    .padding(15)
+                    .background(Color.black)
+                    .cornerRadius(25)
+            }
         }
         .navigationTitle("Добавить прием пищи")
         .navigationBarBackButtonTitleHidden()

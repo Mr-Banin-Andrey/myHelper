@@ -6,19 +6,28 @@
 //
 
 import SwiftUI
+import Combine
 
 struct CustomPicker: View {
     @Environment(\.dismiss) var dismiss
     
     var title: String
-    @State var number: Int = 100
+    @State var number: Double = 100.0
     
     let action: (Int) -> Void
+        
+    private func decimalNotation() -> [String] {
+        var arrayOfNumbers: [String] = []
+        for num in stride(from:0.0, through: 99.9, by: 0.1) {
+            arrayOfNumbers.append(String(format:"%.1f", num))
+        }
+        return arrayOfNumbers
+    }
     
     var body: some View {
         VStack(spacing: 1) {
             HStack {
-                Text("\(number)")
+                Text("\(String(format:"%.1f", number))")
                 
                 Text(title)
             }
@@ -31,7 +40,7 @@ struct CustomPicker: View {
                 .padding(.horizontal, 16)
             
             Button(action: {
-                action(number)
+                action(Int(number))
                 dismiss()
             }, label: {
                 Text("Добавить")
@@ -45,12 +54,12 @@ struct CustomPicker: View {
             
             HStack {
                 Picker("", selection: $number) {
-                    ForEach(1...500, id: \.self) { number in
+                    ForEach(decimalNotation(), id: \.self) { number in
                         Text("\(number)")
                     }
                 }
                 .pickerStyle(.wheel)
-                
+                                
                 if title != "" {
                     Text(title)
                         .padding(16)
