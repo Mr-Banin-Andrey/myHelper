@@ -14,10 +14,10 @@ final class AddingFoodViewModel: ObservableObject {
     @Published var dish: String = ""
     @Published var weight: String = ""
     
-    @Published var calories: Int = 100
-    @Published var proteins: Int = 0
-    @Published var fats: Int  = 0
-    @Published var carbohydrates: Int  = 0
+    @Published var calories: String = ""
+    @Published var proteins: String = ""
+    @Published var fats: String = ""
+    @Published var carbohydrates: String = ""
     
     
     @Published var isShowView: Bool = false

@@ -104,11 +104,10 @@ struct AddingFoodView: View {
 
                 if viewModel.isShowView {
                     HStack(spacing: 5) {
-//                        CPFCCell(name: "Калории", unitOfMeasurement: "ккал", shortName: "ккал", value: $viewModel.calories)
-//                        //TODO: передалать на Double
-//                        CPFCCell(name: "Белки", unitOfMeasurement: "г", shortName: "белки", value: $viewModel.proteins)
-//                        CPFCCell(name: "Жиры", unitOfMeasurement: "г", shortName: "жиры", value: $viewModel.fats)
-//                        CPFCCell(name: "Углеводы", unitOfMeasurement: "г", shortName: "углеводы", value: $viewModel.carbohydrates)
+                        CPFCCell(label: .constant("Калории"), text: $viewModel.calories, placeholder: "0", unitOfMeasurement: "")
+                        CPFCCell(label: .constant("Белки"), text: $viewModel.proteins, placeholder: "0", unitOfMeasurement: "г")
+                        CPFCCell(label: .constant("Жиры"), text: $viewModel.fats, placeholder: "0", unitOfMeasurement: "г")
+                        CPFCCell(label: .constant("Углеводы"), text: $viewModel.carbohydrates, placeholder: "0", unitOfMeasurement: "г")
                     }
                 }
             }
