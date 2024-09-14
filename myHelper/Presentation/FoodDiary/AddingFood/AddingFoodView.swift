@@ -109,6 +109,7 @@ struct AddingFoodView: View {
                         CPFCCell(label: .constant("Жиры"), text: $viewModel.fats, placeholder: "0", unitOfMeasurement: "г")
                         CPFCCell(label: .constant("Углеводы"), text: $viewModel.carbohydrates, placeholder: "0", unitOfMeasurement: "г")
                     }
+                    .padding(.horizontal, 8)
                 }
             }
             .padding(.vertical, 16)

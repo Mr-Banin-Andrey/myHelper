@@ -43,12 +43,14 @@ struct CPFCCell: View {
         .textFieldStyle(.plain)
         .tint(.yellow)
         .foregroundStyle(Color.yellow)
+        .frame(idealWidth: .infinity, maxWidth: .infinity)
         .padding(.vertical, isShowView || !text.isEmpty  ? 5 : 10)
         .padding(.horizontal, isShowView || !text.isEmpty  ? 15 : 10)
         .background(Color.gray)
         .clipShape(.capsule)
         .multilineTextAlignment(.center)
         .keyboardType(.decimalPad)
+        
     }
 }
 
