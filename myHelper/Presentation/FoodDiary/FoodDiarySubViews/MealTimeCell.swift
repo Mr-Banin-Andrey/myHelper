@@ -40,9 +40,7 @@ struct MealTimeCell: View {
 
                         Spacer()
                         
-//                        ZStack {
                         if isActiveNutritionalValue {
-                            
                             HStack {
                                 VStack {
                                     Text("К")
@@ -85,70 +83,82 @@ struct MealTimeCell: View {
                                 }
                             }
                         }
-                        
                     }
                     .padding(.vertical, 5)
                     .padding(.horizontal, 8)
                     .background(Color(uiColor: UIColor(_colorLiteralRed: 0.4, green: 0.0, blue: 0.1, alpha: 0.4)))
                     .cornerRadius(12)
                     .padding(.top, 5)
+                    .padding(.horizontal, 10)
                     
                     ForEach(dishes) { food in
                         HStack {
                             Text(food.name)
-                                .fontWeight(.light)
-                                .font(.system(size: 13))
+                                .font(.body)
                                 
                             Spacer()
                             
                             if isActiveNutritionalValue {
                                 Text("\(food.weight.description) грамм")
-                                    .fontWeight(.light)
-                                    .font(.system(size: 12))
+                                .font(.caption)
                             }
                         }
                         .padding(.horizontal, 5)
+                        .padding(.top, 4)
                         
-                        Divider()
-                            .frame(height: 0.5)
-                            .background(Color(.systemGray))
+                        
+                        if dishes.last?.id != food.id {
+                            Divider()
+                                .frame(height: 0.5)
+                                .background(Color(.systemGray))
+                        }
                     }
+                    .padding(.horizontal, 10)
+                    
+                    Divider()
+                        .frame(height: 1)
+                        .background(Color(.systemGray))
                     
                     HStack {
                         Text("Таблетки:")
+                            .bold()
                             .lineLimit(1)
                         
                         Spacer()
-                        
-                        ForEach(pills) { pill in
-                            Text(pill.name)
-                                .fontWeight(.light)
-                                .font(.system(size: 13))
-                                
-                        }
                     }
                     .padding(2)
+                    .padding(.horizontal, 10)
+                    
+                    HStack {
+                        Spacer()
+                        ForEach(pills) { pill in
+                            Text(pill.name)
+                                .font(.body)
+                        }
+                    }
+                    .padding(.horizontal, 10)
                     
                     Divider()
-                        .frame(height: 0.5)
+                        .frame(height: 1)
                         .background(Color(.systemGray))
                     
                     HStack {
                         Text("Ощущения после еды:")
+                            .bold()
                             .lineLimit(1)
                         
                         Spacer()
                     }
                     .padding(2)
+                    .padding(.horizontal, 8)
                     
                     HStack {
                         Spacer()
                         Text(feeling.name)
-                            .fontWeight(.light)
-                            .font(.system(size: 13))
+                            .font(.body)
                     }
+                    .padding(.horizontal, 10)
                 }
-                .padding(.horizontal, 10)
                 .padding(.bottom, 10)
                 
             }

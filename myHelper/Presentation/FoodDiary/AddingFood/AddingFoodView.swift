@@ -27,7 +27,7 @@ struct AddingFoodView: View {
                             }
                         }
                         .padding(8)
-                        .background(Color.gray)
+                        .background(Color.gray.opacity(0.7))
                         .clipShape(.capsule(style: .circular))
                         .padding(.horizontal, 16)
                         
@@ -115,6 +115,17 @@ struct AddingFoodView: View {
                     }
                     .padding(.horizontal, 8)
                 }
+                if !viewModel.dish.isEmpty {
+                    Button {
+                        print("fork.knife")
+                    } label: {
+                        Text("Добавить блюдо")
+                            .foregroundStyle(Color.yellow)
+                            .padding(15)
+                            .background(Color.gray)
+                            .cornerRadius(25)
+                    }
+                }
             }
             .padding(.vertical, 16)
             .background(Color(uiColor: UIColor(_colorLiteralRed: 0.5, green: 0.5, blue: 0.0, alpha: 0.1)))
@@ -122,13 +133,14 @@ struct AddingFoodView: View {
             .padding(1)
             
             NavigationLink(destination: DailySummaryView(viewModel: DailySummaryViewModel())) {
-                Text("Добавить")
+                Text("Сохранить")
                     .foregroundStyle(Color.yellow)
                     .padding(15)
                     .background(Color.black)
                     .cornerRadius(25)
             }
         }
+        .padding(.vertical, 16)
         .navigationTitle("Добавить прием пищи")
         .navigationBarBackButtonTitleHidden()
     }

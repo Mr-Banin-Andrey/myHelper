@@ -39,7 +39,7 @@ struct CustomTextField: View {
             }
             
             VStack(spacing: 2) {
-                TextField(showTitleLabel ? "" : placeholder, text: $text) { value in
+                TextField(showTitleLabel ? "" : placeholder, text: $text.animation()) { value in
                     withAnimation {
                         if value == true {
                             showTitleLabel = value
