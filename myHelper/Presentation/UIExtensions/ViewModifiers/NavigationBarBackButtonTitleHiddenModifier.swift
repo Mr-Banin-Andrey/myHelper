@@ -23,7 +23,9 @@ struct NavigationBarBackButtonTitleHiddenModifier: ViewModifier {
                 }, label: {
                     Image(systemName: "chevron.left")
                         .foregroundColor(Color.black)
-                    .imageScale(.large) }))
+                        .imageScale(.large)
+                })
+            )
             .contentShape(Rectangle())
             .gesture(
                 DragGesture(coordinateSpace: .local)
@@ -32,6 +34,7 @@ struct NavigationBarBackButtonTitleHiddenModifier: ViewModifier {
                             && value.translation.height > -30
                             && value.translation.height < 30 {
                             dismiss()
+                            showTabBar.toggle()
                         }
                     }
             )
