@@ -9,5 +9,6 @@ import SwiftUI
 
 final class SettingsViewModel: ObservableObject {
     
+    @Published var isActiveNutritionalValue: Bool = false
 }
 

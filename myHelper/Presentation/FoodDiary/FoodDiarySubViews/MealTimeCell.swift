@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MealTimeCell: View {
     
+    @Binding var isActiveNutritionalValue: Bool
     let partOfDay: String
     let dishes: [Dish]
     let pills: [Pill]
@@ -35,10 +36,13 @@ struct MealTimeCell: View {
                 VStack {
                     HStack {
                         Text(partOfDay)
+                            .font(.title3)
 
                         Spacer()
                         
-                        ZStack {
+//                        ZStack {
+                        if isActiveNutritionalValue {
+                            
                             HStack {
                                 VStack {
                                     Text("К")
@@ -97,10 +101,11 @@ struct MealTimeCell: View {
                                 
                             Spacer()
                             
-                            Text("\(food.weight.description) грамм")
-                                .fontWeight(.light)
-                                .font(.system(size: 12))
-                                
+                            if isActiveNutritionalValue {
+                                Text("\(food.weight.description) грамм")
+                                    .fontWeight(.light)
+                                    .font(.system(size: 12))
+                            }
                         }
                         .padding(.horizontal, 5)
                         
@@ -155,7 +160,7 @@ struct MealTimeCell: View {
 }
 
 #Preview {
-    MealTimeCell(partOfDay: "Dinner",
+    MealTimeCell(isActiveNutritionalValue: .constant(false), partOfDay: "Dinner",
                  dishes: FoodEatenDuringDay.mockArray[0].dishes,
                  pills: FoodEatenDuringDay.mockArray[0].pills, 
                  feeling: FoodEatenDuringDay.mockArray[0].feeling)

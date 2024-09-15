@@ -9,6 +9,11 @@ import SwiftUI
 
 final class FoodDiaryViewModel: ObservableObject {
     
+    @Published var isActiveNutritionalValue: Bool = false
+    
     let mockFoodEatenDuringDay = FoodEatenDuringDay.mockArray
     
+    init() {
+
+    }
 }

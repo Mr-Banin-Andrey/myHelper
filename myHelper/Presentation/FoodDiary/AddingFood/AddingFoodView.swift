@@ -21,8 +21,10 @@ struct AddingFoodView: View {
                             
                             Spacer()
                             
-                            Text("К/Б/Ж/У  Вес")
-                                .foregroundStyle(Color.yellow)
+                            if viewModel.isActiveNutritionalValue {
+                                Text("К/Б/Ж/У  Вес")
+                                    .foregroundStyle(Color.yellow)
+                            }
                         }
                         .padding(8)
                         .background(Color.gray)
@@ -37,9 +39,11 @@ struct AddingFoodView: View {
                                         
                                         Spacer()
                                         
-                                        Text("200/23.5/43.4/69 350г")
-                                            .lineLimit(1)
-                                            .font(.caption)
+                                        if viewModel.isActiveNutritionalValue {
+                                            Text("200/23.5/43.4/69 350г")
+                                                .lineLimit(1)
+                                                .font(.caption)
+                                        }
                                     }
                                     
                                     Divider()
@@ -64,17 +68,17 @@ struct AddingFoodView: View {
                         showError: .constant(false),
                         text: $viewModel.dish,
                         showTitleLabel: true)
-                    .padding(viewModel.isShowView ? .leading : .horizontal, 16)
+                    .padding(viewModel.isActiveNutritionalValue ? .leading : .horizontal, 16)
                     
-                    if viewModel.isShowView {
+                    if viewModel.isActiveNutritionalValue {
                         CustomTextField(
                             label: "Вес",
+                            keyboardType: .decimalPad,
                             showError: .constant(false),
                             text: $viewModel.weight,
                             showTitleLabel: true)
                         .frame(width: 35)
-                        
-                        //TODO: добавить пикер с роллером
+                                                
                         VStack {
                             Spacer()
                             Text("г")
@@ -84,25 +88,25 @@ struct AddingFoodView: View {
                     }
                 }
                 
-                Button(action: {
-                    withAnimation {
-                        viewModel.isShowView.toggle()
-                    }
-                }, label: {
-                    HStack {
-                        Image(systemName: viewModel.isShowView ? "checkmark.circle" : "circle")
-                        
-                        Text("Добавить вес блюда и КБЖУ")
-                            .font(.caption)
-                        Spacer()
-                    }
-                    .foregroundStyle(Color(.systemGray))
-                    .padding(.horizontal, 16)
-                    .padding(.top, 8)
-                    .padding(.bottom, 16)
-                })
+//                Button(action: {
+//                    withAnimation {
+//                        viewModel.isShowView.toggle()
+//                    }
+//                }, label: {
+//                    HStack {
+//                        Image(systemName: viewModel.isShowView ? "checkmark.circle" : "circle")
+//                        
+//                        Text("Добавить вес блюда и КБЖУ")
+//                            .font(.caption)
+//                        Spacer()
+//                    }
+//                    .foregroundStyle(Color(.systemGray))
+//                    .padding(.horizontal, 16)
+//                    .padding(.top, 8)
+//                    .padding(.bottom, 16)
+//                })
 
-                if viewModel.isShowView {
+                if viewModel.isActiveNutritionalValue {
                     HStack(spacing: 5) {
                         CPFCCell(label: .constant("Калории"), text: $viewModel.calories, placeholder: "0", unitOfMeasurement: "")
                         CPFCCell(label: .constant("Белки"), text: $viewModel.proteins, placeholder: "0", unitOfMeasurement: "г")

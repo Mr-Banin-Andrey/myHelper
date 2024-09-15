@@ -10,9 +10,16 @@ import SwiftUI
 struct SettingsView: View {
     @StateObject var viewModel: SettingsViewModel
     
-    var body: some View {
-        ZStack {
-            Text("Setting")
+    var body: some View {        
+        Form {
+            Section {
+                Toggle(isOn: $viewModel.isActiveNutritionalValue, label: {
+                    Text("Считать вес блюда и КБЖУ")
+                        .font(.body)
+                })
+            } header: {
+                Text("Дневник питания")
+            }
         }
     }
 }
@@ -20,4 +27,3 @@ struct SettingsView: View {
 #Preview {
     SettingsView(viewModel: SettingsViewModel())
 }
-

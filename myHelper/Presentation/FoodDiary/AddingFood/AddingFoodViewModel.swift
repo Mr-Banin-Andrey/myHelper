@@ -20,6 +20,6 @@ final class AddingFoodViewModel: ObservableObject {
     @Published var carbohydrates: String = ""
     
     
-    @Published var isShowView: Bool = false
+    @Published var isActiveNutritionalValue: Bool = false
     
 }
