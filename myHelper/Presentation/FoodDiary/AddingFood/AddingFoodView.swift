@@ -17,7 +17,7 @@ struct AddingFoodView: View {
                     VStack {
                         HStack {
                             Text("Блюда")
-                                .foregroundStyle(Color.yellow)
+                                .font(.title3)
                             
                             Spacer()
                             
@@ -26,10 +26,13 @@ struct AddingFoodView: View {
                                     .foregroundStyle(Color.yellow)
                             }
                         }
-                        .padding(8)
-                        .background(Color.gray.opacity(0.7))
-                        .clipShape(.capsule(style: .circular))
-                        .padding(.horizontal, 16)
+                        .padding(.vertical, 5)
+                        .padding(.horizontal, 8)
+                        .background(Color.white)
+                        .cornerRadius(12)
+                        .padding(.top, 4)
+                        .padding(.horizontal, 8)
+                        .padding(.bottom, 8)
                         
                         LazyVStack {
                             ForEach(viewModel.dishes.dishes) { dish in
@@ -55,8 +58,8 @@ struct AddingFoodView: View {
                         }
                     }
                 }
-                .padding(.vertical, 16)
-                .background(Color(uiColor: UIColor(_colorLiteralRed: 0.0, green: 0.0, blue: 0.5, alpha: 0.1)))
+                .padding(.vertical, 8)
+                .background(Color(uiColor: UIColor(_colorLiteralRed: 0.0, green: 0.0, blue: 0.7, alpha: 0.3)))
                 .cornerRadius(16)
                 .padding(1)
             }
@@ -127,8 +130,8 @@ struct AddingFoodView: View {
                     }
                 }
             }
-            .padding(.vertical, 16)
-            .background(Color(uiColor: UIColor(_colorLiteralRed: 0.5, green: 0.5, blue: 0.0, alpha: 0.1)))
+            .padding(.vertical, 20)
+            .background(Color(uiColor: UIColor(_colorLiteralRed: 0.5, green: 0.5, blue: 0.0, alpha: 0.3)))
             .cornerRadius(16)
             .padding(1)
             
@@ -140,7 +143,6 @@ struct AddingFoodView: View {
                     .cornerRadius(25)
             }
         }
-        .padding(.vertical, 16)
         .navigationTitle("Добавить прием пищи")
         .navigationBarBackButtonTitleHidden()
     }
