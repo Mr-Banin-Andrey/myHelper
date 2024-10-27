@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import Combine
 
 final class SettingsViewModel: ObservableObject {
     
+    //TODO: добавить реактивщину или обновление из базы, для подсчета кбжу
     @Published var isActiveNutritionalValue: Bool = false
 }
 

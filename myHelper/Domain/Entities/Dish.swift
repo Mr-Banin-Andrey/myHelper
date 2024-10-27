@@ -11,7 +11,7 @@ import Foundation
 struct FoodEatenDuringDay: Identifiable {
     let id: String
     let time: Date
-    let dishes: [Dish]
+    var dishes: [Dish]
     
     let pills: [Pill]
     let feeling: FeelingAfterEating

@@ -12,6 +12,9 @@ struct NavigationBarBackButtonTitleHiddenModifier: ViewModifier {
     
     @State private var showTabBar = false
     
+    //TODO: подумать над реализацией 
+    var action: () -> Void
+    
     @ViewBuilder @MainActor
     func body(content: Content) -> some View {
         content
@@ -24,6 +27,13 @@ struct NavigationBarBackButtonTitleHiddenModifier: ViewModifier {
                     Image(systemName: "chevron.left")
                         .foregroundColor(Color.black)
                         .imageScale(.large)
+                }),
+                trailing: Button(action: {
+                    dismiss()
+                    showTabBar.toggle()
+                    action()
+                }, label: {
+                    Text("Сохранить")
                 })
             )
             .contentShape(Rectangle())
