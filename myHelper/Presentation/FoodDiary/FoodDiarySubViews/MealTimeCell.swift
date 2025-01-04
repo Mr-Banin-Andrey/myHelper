@@ -172,9 +172,9 @@ struct MealTimeCell: View {
     }
 }
 
-#Preview {
-    MealTimeCell(isActiveNutritionalValue: .constant(false), partOfDay: "Dinner",
-                 dishes: FoodEatenDuringDay.mockArray[0].dishes,
-                 pills: FoodEatenDuringDay.mockArray[0].pills, 
-                 feeling: FoodEatenDuringDay.mockArray[0].feeling)
-}
+//#Preview {
+//    MealTimeCell(isActiveNutritionalValue: .constant(false), partOfDay: "Dinner",
+//                 dishes: FoodEatenDuringDay.mockArray[0].dishes,
+//                 pills: FoodEatenDuringDay.mockArray[0].pills, 
+//                 feeling: FoodEatenDuringDay.mockArray[0].feeling)
+//}

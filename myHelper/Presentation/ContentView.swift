@@ -15,6 +15,11 @@ struct ContentView: View {
                     Label("Питание", systemImage: "fork.knife.circle")
                 }
             
+            TrainingDiaryView(viewModel: TrainingDiaryViewModel())
+                .tabItem {
+                    Label("Тренировка", systemImage: "dumbbell")
+                }
+            
             SettingsView(viewModel: SettingsViewModel())
                 .tabItem {
                     Label("Настройки", systemImage: "gearshape")

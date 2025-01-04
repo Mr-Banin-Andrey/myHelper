@@ -32,24 +32,24 @@ struct FoodDiaryView: View {
                 .padding(16)
                 
                 // плитка с приёмом
-                VStack {
-                    MealTimeCell(
-                        isActiveNutritionalValue: $viewModel.isActiveNutritionalValue, partOfDay: "Завтрак 6:00",
-                        dishes: viewModel.mockFoodEatenDuringDay[0].dishes,
-                        pills: viewModel.mockFoodEatenDuringDay[0].pills,
-                        feeling: viewModel.mockFoodEatenDuringDay[0].feeling)
-                    MealTimeCell(
-                        isActiveNutritionalValue: $viewModel.isActiveNutritionalValue, partOfDay: "Обед 12:00",
-                        dishes: viewModel.mockFoodEatenDuringDay[0].dishes,
-                        pills: viewModel.mockFoodEatenDuringDay[0].pills,
-                        feeling: viewModel.mockFoodEatenDuringDay[0].feeling)
-                    MealTimeCell(
-                        isActiveNutritionalValue: $viewModel.isActiveNutritionalValue, partOfDay: "Ужин 19:00",
-                        dishes: viewModel.mockFoodEatenDuringDay[0].dishes,
-                        pills: viewModel.mockFoodEatenDuringDay[0].pills,
-                        feeling: viewModel.mockFoodEatenDuringDay[0].feeling)
-                }
-                .padding(.bottom, 24)
+//                VStack {
+//                    MealTimeCell(
+//                        isActiveNutritionalValue: $viewModel.isActiveNutritionalValue, partOfDay: "Завтрак 6:00",
+//                        dishes: viewModel.mockFoodEatenDuringDay[0].dishes,
+//                        pills: viewModel.mockFoodEatenDuringDay[0].pills,
+//                        feeling: viewModel.mockFoodEatenDuringDay[0].feeling)
+//                    MealTimeCell(
+//                        isActiveNutritionalValue: $viewModel.isActiveNutritionalValue, partOfDay: "Обед 12:00",
+//                        dishes: viewModel.mockFoodEatenDuringDay[0].dishes,
+//                        pills: viewModel.mockFoodEatenDuringDay[0].pills,
+//                        feeling: viewModel.mockFoodEatenDuringDay[0].feeling)
+//                    MealTimeCell(
+//                        isActiveNutritionalValue: $viewModel.isActiveNutritionalValue, partOfDay: "Ужин 19:00",
+//                        dishes: viewModel.mockFoodEatenDuringDay[0].dishes,
+//                        pills: viewModel.mockFoodEatenDuringDay[0].pills,
+//                        feeling: viewModel.mockFoodEatenDuringDay[0].feeling)
+//                }
+//                .padding(.bottom, 24)
             }
             .navigationTitle("Дневник питания")
             .navigationBarTitleDisplayMode(.inline)

@@ -27,6 +27,6 @@ struct DailySummaryView: View {
     }
 }
 
-#Preview {
-    DailySummaryView(viewModel: DailySummaryViewModel())
-}
+//#Preview {
+//    DailySummaryView(viewModel: DailySummaryViewModel())
+//}
